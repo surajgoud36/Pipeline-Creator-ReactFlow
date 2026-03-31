@@ -1,0 +1,346 @@
+/* =====================================
+  RESET & BASE STYLES
+===================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================
+  LAYOUT (FLOW APP)
+===================================== */
+
+.parent-container {
+  display: flex;
+
+  height: 100%;
+}
+.react-flow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Sidebar */
+.toolbar-container {
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  background-color: aliceblue;
+}
+.toolbar-container h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Draggable Nodes in sidebar */
+.draggable-nodes {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Submit Button */
+.submit-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background: #1c2536;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+/* =====================================
+  NODES
+===================================== */
+
+/* Base Node Styles */
+.base-node {
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 300px;
+  color: #1c2536;
+  border: 1px solid darkgray;
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  background-color: rgb(230, 238, 245);
+}
+
+/* Base Node Delete Button */
+.node-delete-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #706f6f;
+  background: transparent;
+  font-size: 5px;
+  line-height: 1;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* hover effect */
+.node-delete-btn:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+/* Node Title */
+.base-node .title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: center;
+  width: 100%;
+}
+.base-node .title h5 {
+  padding-bottom: 5px;
+  border-bottom: 1px solid #828385;
+}
+
+/* Node Name */
+.node-name {
+  font-size: 11px;
+  background-color: #bacef2;
+  color: #3a3f45;
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  margin-top: 5px;
+  border: none;
+  padding: 3px 5px;
+  text-align: center;
+}
+
+/* =====================================
+  HANDLES & EDGES
+===================================== */
+
+.custom-handle {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border: 2px solid #6366f1;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.custom-handle.connected {
+  background: #6366f1;
+}
+
+/* Custom Edge Delete Button */
+.edge-delete-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: white;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edge-delete-btn:hover {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* =====================================
+   Reusable FORM FIELDS
+===================================== */
+/* Text Field */
+.text-field {
+  field-sizing: content;
+  width: 100%;
+  min-width: 150px;
+  max-width: 280px;
+}
+/* Display Name field */
+.input-name-field {
+  field-sizing: content;
+  width: 100%;
+  min-width: 150px;
+  max-width: 280px;
+  border: 1px solid lightgrey;
+  padding: 5px 5px;
+  border-radius: 6px;
+  color: #3a3f45;
+  margin-top: 0px;
+}
+/* Output Field */
+.output-field p {
+  font-size: 12px;
+}
+
+.select-field p,
+.text-field p,
+.text-area-field p {
+  font-size: 12px;
+  margin-bottom: 1px;
+  font-weight: 500;
+}
+/* Select Field */
+.select-field select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  background: white;
+}
+/* Text Area Field */
+.text-area-field {
+  height: 100%;
+  width: 100%;
+}
+
+/* Auto-resizing Text Area */
+.auto-textarea {
+  field-sizing: content;
+  width: 100%;
+  min-height: 100px;
+  min-width: 150px;
+  max-width: 280px;
+  background: white;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+
+  padding: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+/* =====================================
+  IMAGE NODE
+===================================== */
+
+.image-node {
+  width: 100%;
+}
+.image-node .operations-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.image-node .operation {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  position: relative;
+  background-color: #f5f6f9;
+  padding: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid lightgrey;
+}
+.image-node .operation p {
+  font-size: 10px;
+}
+.image-node .operation span {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+}
+
+/* =====================================
+   8. MODAL
+===================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.modal-content {
+  margin: 15px 0;
+}
+
+.close-btn {
+  padding: 8px 16px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #334155;
+}
+
+/* =====================================
+  RESPONSIVE
+===================================== */
+@media only screen and (max-width: 600px) {
+  .react-flow__panel.react-flow__minimap {
+    display: none;
+  }
+}
