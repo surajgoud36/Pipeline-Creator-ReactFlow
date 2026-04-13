@@ -22,7 +22,7 @@ export const SubmitButton = () => {
         target: edge.target,
       }));
       // fetch request to the fast api backend
-      const response = await fetch("https://fastapi-backend-sm7b.onrender.com/", {
+      const response = await fetch("http://fastapi-backend-sm7b.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
