@@ -18,7 +18,7 @@ A basic starter project for building visual pipelines using the React Flow libra
 - **State Management**: Zustand
 - **Build Tool**: React Scripts with Create React App
 - **CSS**: Modern CSS with custom styling
-
+- **Backend Framework**: Python Fast Api
 ## Available Node Types
 
 The pipeline builder includes the following pre-configured nodes:
